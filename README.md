@@ -1,16 +1,54 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Адаптивное портфолио, созданное с использованием **React** и **Vite**.
 
-Currently, two official plugins are available:
+## 🚀 Быстрый старт
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Требования
+- Node.js (рекомендуется последняя LTS-версия).
 
-## React Compiler
+### 1. Установка зависимостей
+Откройте терминал в папке проекта и выполните команду:
+```bash
+npm install
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Запуск локального сервера
+Чтобы запустить проект в режиме разработки:
+```bash
+npm run dev
+```
+После этого откройте в браузере предоставленную ссылку (обычно это `http://localhost:5173`).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌐 Деплой (развертывание сайта) через GitHub Pages
+
+Этот проект уже настроен для автоматической загрузки на **GitHub Pages**. 
+
+### Как обновить сайт в интернете:
+Если вы внесли изменения в код и хотите опубликовать их на живом сайте, просто выполните эту команду:
+```bash
+npm run deploy
+```
+
+Эта команда автоматически:
+1. Создаст оптимизированную сборку (`npm run build`).
+2. Отправит готовую сборку в ветку `gh-pages` вашего репозитория.
+
+После этого изменения появятся по ссылке: 
+[https://levonkotanchyan.github.io/portfolio](https://levonkotanchyan.github.io/portfolio) 
+*(обновление на сервере GitHub может занять пару минут)*.
+
+---
+
+## 🛠 Технологии
+- **React 19** 
+- **Vite** — быстрая сборка
+- **React Router** — управление маршрутами
+- **React Icons** — векторные иконки
+
+## 📂 Структура проекта
+- `/src/components` — файлы React-компонентов и их стили
+- `package.json` — метаданные и зависимости
+- `vite.config.js` — настройки сборщика
