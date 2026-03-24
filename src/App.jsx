@@ -22,7 +22,7 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Home />} />
+        <Route path="/portfolio/" element={<Home />} />
         <Route path="/algorithm/:slug" element={<AlgorithmPage />} />
       </Routes>
     </div>
