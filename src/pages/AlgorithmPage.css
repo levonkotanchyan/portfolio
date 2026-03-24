@@ -1,0 +1,242 @@
+.algo-page {
+    min-height: 100vh;
+    padding: 40px 0 80px;
+    animation: fadeIn 0.4s both;
+}
+
+.algo-page__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    transition: all var(--transition-medium);
+    margin-bottom: 32px;
+}
+
+.algo-page__back:hover {
+    color: var(--accent-secondary);
+    border-color: var(--border-glass-hover);
+    transform: translateX(-4px);
+}
+
+.algo-page__title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    margin-bottom: 32px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.algo-page__canvas {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    min-height: 400px;
+}
+
+/* ===== Shared visualization controls ===== */
+.viz-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.viz-btn {
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-glass);
+}
+
+.viz-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glass-hover);
+}
+
+.viz-btn--primary {
+    background: var(--accent-gradient);
+    color: #fff;
+    border: none;
+}
+
+.viz-btn--primary:hover {
+    box-shadow: 0 4px 16px var(--accent-glow);
+    transform: translateY(-1px);
+}
+
+.viz-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* ===== Bar chart (sorting) ===== */
+.viz-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 300px;
+    padding: 12px 0;
+}
+
+.viz-bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.25s ease, background 0.2s ease;
+    min-width: 4px;
+    position: relative;
+}
+
+.viz-bar--active {
+    background: var(--accent-primary) !important;
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.viz-bar--sorted {
+    background: var(--success) !important;
+}
+
+.viz-bar--pivot {
+    background: var(--warning) !important;
+}
+
+/* ===== Grid (graph algorithms) ===== */
+.viz-grid {
+    display: inline-grid;
+    gap: 2px;
+    margin: 0 auto;
+}
+
+.viz-cell {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background 0.15s ease;
+    cursor: pointer;
+}
+
+.viz-cell--wall {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.viz-cell--start {
+    background: var(--success);
+    box-shadow: 0 0 8px var(--success);
+}
+
+.viz-cell--end {
+    background: var(--danger);
+    box-shadow: 0 0 8px var(--danger);
+}
+
+.viz-cell--visited {
+    background: rgba(108, 92, 231, 0.4);
+}
+
+.viz-cell--path {
+    background: var(--warning);
+    box-shadow: 0 0 6px var(--warning);
+}
+
+.viz-cell--empty {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.viz-cell--empty:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .algo-page__canvas {
+        padding: 20px 16px;
+    }
+
+    .viz-bars {
+        height: 200px;
+    }
+
+    .viz-cell {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ===== Info box ===== */
+.viz-info {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: var(--radius-md);
+    background: rgba(108, 92, 231, 0.06);
+    border: 1px solid rgba(108, 92, 231, 0.12);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-family: var(--font-mono);
+}
+
+/* ===== Binary search specific ===== */
+.viz-number-line {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.viz-number {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
+}
+
+.viz-number--active {
+    background: rgba(108, 92, 231, 0.15);
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+.viz-number--mid {
+    background: var(--accent-primary);
+    color: #fff;
+    box-shadow: 0 0 12px var(--accent-glow);
+    transform: scale(1.1);
+}
+
+.viz-number--found {
+    background: var(--success);
+    color: #fff;
+    box-shadow: 0 0 12px var(--success);
+    transform: scale(1.15);
+}
+
+.viz-number--eliminated {
+    opacity: 0.2;
+    transform: scale(0.9);
+}

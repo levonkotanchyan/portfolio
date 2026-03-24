@@ -1,0 +1,9 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Smooth page transitions */
+.app>* {
+  animation: fadeIn 0.3s both;
+}

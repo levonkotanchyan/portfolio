@@ -1,0 +1,122 @@
+.algorithms {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.algorithms__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+}
+
+/* ===== Card ===== */
+.algo-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: all var(--transition-medium);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.algorithms--visible .algo-card {
+    animation: fadeInUp 0.5s both;
+}
+
+.algo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+    z-index: -1;
+}
+
+.algo-card:hover {
+    border-color: var(--border-glass-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--glass-shadow), 0 0 40px rgba(108, 92, 231, 0.08);
+}
+
+.algo-card:hover::before {
+    opacity: 0.05;
+}
+
+/* --- Header --- */
+.algo-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.algo-card__icon {
+    font-size: 2rem;
+}
+
+.algo-card__category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-secondary);
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid rgba(162, 155, 254, 0.2);
+    background: rgba(162, 155, 254, 0.06);
+}
+
+/* --- Body --- */
+.algo-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.algo-card__desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    flex: 1;
+}
+
+/* --- Footer --- */
+.algo-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-glass);
+}
+
+.algo-card__complexity {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-secondary);
+}
+
+.algo-card__arrow {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+}
+
+.algo-card:hover .algo-card__arrow {
+    color: var(--accent-primary);
+    transform: translateX(4px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .algorithms__grid {
+        grid-template-columns: 1fr;
+    }
+}

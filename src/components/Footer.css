@@ -1,0 +1,76 @@
+.footer {
+    position: relative;
+    padding: 60px 0 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer__glow {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 200px;
+    background: var(--accent-primary);
+    filter: blur(120px);
+    opacity: 0.12;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.footer__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+/* ===== Social links ===== */
+.footer__socials {
+    display: flex;
+    gap: 16px;
+}
+
+.footer__link {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    transition: all var(--transition-medium);
+}
+
+.footer__link:hover {
+    color: var(--accent-secondary);
+    border-color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* ===== Text ===== */
+.footer__copy {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer__heart {
+    color: var(--danger);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.footer__year {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
