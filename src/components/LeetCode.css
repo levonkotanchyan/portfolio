@@ -54,6 +54,8 @@
     transition: all var(--transition-medium);
     opacity: 0;
     transform: translateY(10px);
+    text-decoration: none;
+    color: inherit;
 }
 
 .leetcode--visible .leetcode__row {

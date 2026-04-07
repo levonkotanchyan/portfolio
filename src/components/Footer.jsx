@@ -2,9 +2,9 @@ import { FiGithub, FiSend, FiMail, FiHeart } from 'react-icons/fi';
 import './Footer.css';
 
 const socials = [
-    { icon: <FiGithub />, label: 'GitHub', href: 'https://github.com/yourusername' },
-    { icon: <FiSend />, label: 'Telegram', href: 'https://t.me/yourusername' },
-    { icon: <FiMail />, label: 'Email', href: 'mailto:you@example.com' },
+    { icon: <FiGithub />, label: 'GitHub', href: 'https://github.com/levonkotanchyan' },
+    { icon: <FiSend />, label: 'Telegram', href: 'https://t.me/levonkotanchyan' },
+    { icon: <FiMail />, label: 'Email', href: 'mailto:leva.lepmov2008@gmail.com' },
 ];
 
 export default function Footer() {

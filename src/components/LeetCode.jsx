@@ -11,16 +11,16 @@ const DIFFICULTY_COLORS = {
 
 // Fallback demo data shown when the API is unavailable (CORS, etc.)
 const FALLBACK_DATA = [
-    { title: 'Two Sum', difficulty: 'Easy', status: 'Accepted' },
-    { title: 'Add Two Numbers', difficulty: 'Medium', status: 'Accepted' },
-    { title: 'Longest Substring Without Repeating Characters', difficulty: 'Medium', status: 'Accepted' },
-    { title: 'Median of Two Sorted Arrays', difficulty: 'Hard', status: 'Accepted' },
-    { title: 'Longest Palindromic Substring', difficulty: 'Medium', status: 'Accepted' },
-    { title: 'Reverse Integer', difficulty: 'Medium', status: 'Accepted' },
-    { title: 'String to Integer (atoi)', difficulty: 'Medium', status: 'Accepted' },
-    { title: 'Palindrome Number', difficulty: 'Easy', status: 'Accepted' },
-    { title: 'Container With Most Water', difficulty: 'Medium', status: 'Accepted' },
-    { title: 'Roman to Integer', difficulty: 'Easy', status: 'Accepted' },
+    { title: 'Two Sum', titleSlug: 'two-sum', difficulty: 'Easy', status: 'Accepted' },
+    { title: 'Add Two Numbers', titleSlug: 'add-two-numbers', difficulty: 'Medium', status: 'Accepted' },
+    { title: 'Longest Substring Without Repeating Characters', titleSlug: 'longest-substring-without-repeating-characters', difficulty: 'Medium', status: 'Accepted' },
+    { title: 'Median of Two Sorted Arrays', titleSlug: 'median-of-two-sorted-arrays', difficulty: 'Hard', status: 'Accepted' },
+    { title: 'Longest Palindromic Substring', titleSlug: 'longest-palindromic-substring', difficulty: 'Medium', status: 'Accepted' },
+    { title: 'Reverse Integer', titleSlug: 'reverse-integer', difficulty: 'Medium', status: 'Accepted' },
+    { title: 'String to Integer (atoi)', titleSlug: 'string-to-integer-atoi', difficulty: 'Medium', status: 'Accepted' },
+    { title: 'Palindrome Number', titleSlug: 'palindrome-number', difficulty: 'Easy', status: 'Accepted' },
+    { title: 'Container With Most Water', titleSlug: 'container-with-most-water', difficulty: 'Medium', status: 'Accepted' },
+    { title: 'Roman to Integer', titleSlug: 'roman-to-integer', difficulty: 'Easy', status: 'Accepted' },
 ];
 
 export default function LeetCode() {
@@ -47,6 +47,7 @@ export default function LeetCode() {
             try {
                 const query = `{
           recentAcSubmissionList(username: "${LEETCODE_USERNAME}", limit: 10) {
+            id
             title
             titleSlug
             timestamp
@@ -66,6 +67,7 @@ export default function LeetCode() {
                 if (submissions?.length) {
                     setProblems(
                         submissions.map((s) => ({
+                            id: s.id,
                             title: s.title,
                             titleSlug: s.titleSlug,
                             difficulty: '—',
@@ -105,7 +107,10 @@ export default function LeetCode() {
                     <>
                         <div className="leetcode__list">
                             {problems.map((p, i) => (
-                                <div
+                                <a
+                                    href={`https://leetcode.com/problems/${p.titleSlug}/`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className={`leetcode__row animate-delay-${Math.min(i + 1, 6)}`}
                                     key={i}
                                 >
@@ -126,7 +131,7 @@ export default function LeetCode() {
                                             ✓
                                         </span>
                                     </div>
-                                </div>
+                                </a>
                             ))}
                         </div>
                     </>
