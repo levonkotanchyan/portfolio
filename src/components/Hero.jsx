@@ -67,7 +67,7 @@ export default function Hero() {
                         <span className="hero__stat-label">Algorithms</span>
                     </div>
                     <div className="hero__stat">
-                        <span className="hero__stat-number">50+</span>
+                        <span className="hero__stat-number">10</span>
                         <span className="hero__stat-label">LeetCode</span>
                     </div>
                     <div className="hero__stat">
